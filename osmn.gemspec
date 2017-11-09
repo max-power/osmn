@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
     f.match(%r{^(test|spec|features)/})
   end
 
-#  gem.test_files    = ["test/test_osmn.rb"]
+  gem.test_files    = ["test/search_test.rb", "test/reverse_test.rb"]
   gem.require_paths = ["lib"]
 
   gem.add_development_dependency "rake"
