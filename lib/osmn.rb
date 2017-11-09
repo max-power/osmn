@@ -9,11 +9,11 @@ require 'osmn/version'
 module OSMN
   module_function
 
-  def search(q, details = 0)
-    Search.new(q: q, addressdetails: details).call
+  def search(query, **params)
+    Search.new(params.merge(q: query)).call
   end
 
-  def reverse_geocode(lat, lon, details = 0)
-    Reverse.new(lat: lat, lon: lon, addressdetails: details).call
+  def reverse_geocode(lat, lon, **params)
+    Reverse.new(params.merge(lat: lat, lon: lon)).call
   end
 end

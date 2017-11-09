@@ -15,7 +15,7 @@ class SearchTests < MiniTest::Unit::TestCase
   end
 
   def test_search_with_no_details
-    response = OSMN.search('135 pilkington avenue, birmingham', 0)[0]
+    response = OSMN.search('135 pilkington avenue, birmingham', addressdetails: 0)[0]
 
     assert_respond_to(response, :place_id)
     assert_respond_to(response, :licence)
@@ -34,7 +34,7 @@ class SearchTests < MiniTest::Unit::TestCase
   end
 
   def test_search_with_details
-    response = OSMN.search('135 pilkington avenue, birmingham', 1)[0]
+    response = OSMN.search('135 pilkington avenue, birmingham', addressdetails: 1)[0]
 
     assert_respond_to(response, :place_id)
     assert_respond_to(response, :licence)

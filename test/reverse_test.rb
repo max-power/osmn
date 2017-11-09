@@ -14,7 +14,7 @@ class SearchTests < MiniTest::Unit::TestCase
   end
 
   def test_reverse_geocode
-    response = OSMN.reverse_geocode(52.5487429714954, -1.81602098644987, 0)
+    response = OSMN.reverse_geocode(52.5487429714954, -1.81602098644987, addressdetails: 0)
 
     assert_equal "91015268", response.place_id
     assert_equal "Data © OpenStreetMap contributors, ODbL 1.0. http://www.openstreetmap.org/copyright", response.licence
@@ -30,7 +30,7 @@ class SearchTests < MiniTest::Unit::TestCase
   end
 
   def test_reverse_geocode_with_address_details
-    response = OSMN.reverse_geocode(52.5487429714954, -1.81602098644987, 1)
+    response = OSMN.reverse_geocode(52.5487429714954, -1.81602098644987, addressdetails: 1)
 
     assert_respond_to(response, :place_id)
     assert_respond_to(response, :licence)
