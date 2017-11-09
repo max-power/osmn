@@ -16,18 +16,18 @@ API Details can be found at http://wiki.openstreetmap.org/wiki/Nominatim
 ### The easy way:
 ```ruby
 # search for a place
-OSMN::search('135 pilkington avenue, birmingham')
+OSMN.search('135 pilkington avenue, birmingham')
 
 # convert latitude and longitude into a place
-OSMN::reverse_geocode(52.5487429714954, -1.81602098644987)
+OSMN.reverse_geocode(52.5487429714954, -1.81602098644987)
 ```
 ### The full control way:
 #### Search
 ```ruby
 # search for address
 # required params: q (the query)
-search = OSMN::Search.new(:q => '135 pilkington avenue, birmingham')
-search.params = {:limit => 1}
+search = OSMN::Search.new(q: '135 pilkington avenue, birmingham')
+search.params.merge(limit: 1)
 
 # you can revise the params used
 search.params
@@ -53,7 +53,7 @@ params = {
 # convert lat and long
 # required params: lat, lon (latitude and longitude)
 search = OSMN::Reverse.new(:lat => 52.5487429714954)
-search.params = {:lon => -1.81602098644987}
+search.params.merge(lon: -1.81602098644987)
 
 # check the params
 search.params
