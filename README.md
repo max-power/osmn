@@ -40,19 +40,19 @@ You can set any parameter defined in the Nominatim wiki page (http://wiki.openst
 ```ruby
 # example parameters
 params = {
-    :q => '135 pilkington avenue, birmingham', 
-    :'accept-language' >= 'en', 
-    :countrycodes => 'gb', 
-    :bounded => 1, 
-    :polygon => 1, 
-    :addressdetails => 1
+    q: '135 pilkington avenue, birmingham', 
+    'accept-language': 'en', 
+    countrycodes: 'gb', 
+    bounded: 1, 
+    polygon: 1, 
+    addressdetails: 1
 }
 ```
 #### Reverse Geocode
 ```ruby
 # convert lat and long
 # required params: lat, lon (latitude and longitude)
-search = OSMN::Reverse.new(:lat => 52.5487429714954)
+search = OSMN::Reverse.new(lat: 52.5487429714954)
 search.params.merge(lon: -1.81602098644987)
 
 # check the params
@@ -66,12 +66,12 @@ You can set any parameter defined in the Nominatim wiki page (http://wiki.openst
 ```ruby
 # example parameters
 params = {
-    :lat => 52.5487429714954, 
-    :lon => -1.81602098644987, 
-    :'accept-language' => 'en', 
-    :osm_type => 'W', 
-    :zoom => 18, 
-    :addressdetails => 1
+    lat: 52.5487429714954, 
+    lon: -1.81602098644987, 
+    'accept-language': 'en', 
+    osm_type: 'W', 
+    zoom: 18, 
+    addressdetails: 1
 }
 ```
 
