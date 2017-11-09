@@ -9,23 +9,14 @@ Gem::Specification.new do |gem|
   gem.description = "A Ruby wrapper for the OpenStreetMap Nominatim API."
   gem.summary     = "A Ruby wrapper for the OpenStreetMap Nominatim API."
   gem.homepage    = "http://github.com/kalmbach/osmn"
-  gem.files       = [
-    "README.md",
-    "LICENSE",
-    "Rakefile",
-    "lib/osmn.rb",
-    "lib/osmn/structs.rb",
-    "lib/osmn/base.rb",
-    "lib/osmn/search.rb",
-    "lib/osmn/reverse.rb",
-    "lib/osmn/version.rb",
-    "test/test_osmn.rb"
-  ]
 
-  gem.test_files    = ["test/test_osmn.rb"]
+  gem.files       = `git ls-files -z`.split("\x0").reject do |f|
+    f.match(%r{^(test|spec|features)/})
+  end
+
+#  gem.test_files    = ["test/test_osmn.rb"]
   gem.require_paths = ["lib"]
 
-  gem.add_dependency 'json'
-
-  gem.add_development_dependency 'rake'
+  gem.add_development_dependency "rake"
+  gem.add_development_dependency "minitest"
 end

@@ -1,8 +1,7 @@
 module OSMN
-  class Reverse < OSMN::Base
-
-    def reverse_geocode
-      request(:reverse) if @params[:lat] && @params[:lon]
+  class Reverse < Search
+    def call
+      parse request('/reverse') #if params[:lat] && params[:lon]
     end
   end
 end
