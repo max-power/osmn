@@ -7,7 +7,7 @@ module OSMN
     end
     
     def call
-      parse request('/search') # if params[:q]
+      parse request
     end
 
     private
@@ -16,12 +16,16 @@ module OSMN
       { format: :json }
     end
     
-    def request(path)
+    def path
+      "/search"
+    end
+    
+    def request
       Request.new(path, params).fetch
     end
 
     def parse(response)
-      JSON.parse(response, object_class: OpenStruct)
+      JSON.parse response, object_class: OpenStruct
     end
   end
 end
