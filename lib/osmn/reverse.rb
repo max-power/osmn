@@ -1,9 +1,9 @@
 module OSMN
   class Reverse < Search
     private
-    
+
     def path
-      "/reverse"
+      '/reverse'
     end
   end
 end

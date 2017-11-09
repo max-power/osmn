@@ -5,21 +5,21 @@ module OSMN
     def initialize(**params)
       @params = default_params.merge(params)
     end
-    
+
     def call
       parse request
     end
 
     private
-    
+
     def default_params
       { format: :json }
     end
-    
+
     def path
-      "/search"
+      '/search'
     end
-    
+
     def request
       Request.new(path, params).fetch
     end
