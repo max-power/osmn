@@ -5,7 +5,7 @@ A Ruby wrapper for the OpenStreetMap Nominatim API.
 > Nominatim is a tool to search osm data by name and address 
 and to generate synthetic addresses of osm points (reverse geocoding). 
 
-Service can be found at http://nominatim.openstreetmap.org 
+Service can be found at http://nominatim.openstreetmap.org  
 API Details can be found at http://wiki.openstreetmap.org/wiki/Nominatim
 
 ## Installation
@@ -34,7 +34,7 @@ search.params
 # >> {:q => '135 pilkington avenue, birmingham', :limit => 1}
 
 # and if all is ok, you can execute the query
-search.search
+search.call
 ```
 You can set any parameter defined in the Nominatim wiki page (http://wiki.openstreetmap.org/wiki/Nominatim#Parameters)
 ```ruby
@@ -60,7 +60,7 @@ search.params
 # >> {:lat => 52.5487429714954, :lon => -1.81602098644987}
 
 # run the query
-search.reverse_geocode
+search.call
 ```
 You can set any parameter defined in the Nominatim wiki page (http://wiki.openstreetmap.org/wiki/Nominatim#Parameters_2)
 ```ruby
