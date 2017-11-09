@@ -1,4 +1,4 @@
-# OSMN [![Code Climate](https://codeclimate.com/github/kalmbach/osmn.png)](https://codeclimate.com/github/kalmbach/osmn)
+# OSMN [![Maintainability](https://api.codeclimate.com/v1/badges/dd21f82be412394ac8ea/maintainability)](https://codeclimate.com/github/max-power/osmn/maintainability)
 
 A Ruby wrapper for the OpenStreetMap Nominatim API.
 
