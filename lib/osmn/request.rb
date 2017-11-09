@@ -1,6 +1,6 @@
 module OSMN
   class Request
-    Host = 'nominatim.openstreetmap.org'.freeze
+    Host = "nominatim.openstreetmap.org".freeze
   
     def initialize(path, **params)
       @path   = path
@@ -14,7 +14,7 @@ module OSMN
     private
   
     def uri
-      URI::HTTP.build(host: Host, path: @path, query: query)
+      URI::HTTP.build host: Host, path: @path, query: query
     end
   
     def query
