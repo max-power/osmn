@@ -16,8 +16,8 @@ module OSMN
       { format: :json }
     end
     
-    def request(action)
-      Request.new(action, params).fetch
+    def request(path)
+      Request.new(path, params).fetch
     end
 
     def parse(response)
