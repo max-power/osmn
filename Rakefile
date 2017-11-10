@@ -8,3 +8,8 @@ end
 
 desc 'Run tests'
 task default: :test
+
+desc 'Open an irb session preloaded with this library'
+task :console do
+  exec 'irb -rubygems -I lib -r osmn'
+end
