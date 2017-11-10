@@ -7,7 +7,7 @@ module OSMN
     end
 
     def call
-      parse request
+      parse response
     end
 
     private
@@ -20,7 +20,7 @@ module OSMN
       '/search'
     end
 
-    def request
+    def response
       Request.new(path, params).fetch
     end
 
