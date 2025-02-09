@@ -14,7 +14,7 @@ module OSMN
     private
 
     def uri
-      URI::HTTP.build host: Host, path: @path, query: query
+      URI::HTTPS.build host: Host, path: @path, query: query
     end
 
     def query

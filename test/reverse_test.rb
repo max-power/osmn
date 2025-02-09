@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SearchTests < MiniTest::Test
+class SearchTests < Minitest::Test
   def test_nil_reverse
     assert_raises ArgumentError do
       OSMN.reverse_geocode

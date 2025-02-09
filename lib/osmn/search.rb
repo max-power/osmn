@@ -21,7 +21,7 @@ module OSMN
     end
 
     def response
-      Request.new(path, params).fetch
+      Request.new(path, **params).fetch
     end
 
     def parse(response)

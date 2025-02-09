@@ -1,6 +1,6 @@
 require "test_helper"
 
-class SearchTests < MiniTest::Test
+class SearchTests < Minitest::Test
 
   def test_nil_search
     assert_raises ArgumentError do
