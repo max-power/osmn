@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.email       = 'kevin.melchert@gmail.com'
   gem.description = 'A Ruby wrapper for the OpenStreetMap Nominatim API.'
   gem.summary     = 'A Ruby wrapper for the OpenStreetMap Nominatim API.'
-  gem.homepage    = 'http://github.com/kalmbach/osmn'
+  gem.homepage    = 'http://github.com/max-power/osmn'
 
   gem.files       = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
