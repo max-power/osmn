@@ -5,6 +5,7 @@ require 'osmn/request'
 require 'osmn/search'
 require 'osmn/reverse'
 require 'osmn/lookup'
+require 'osmn/status'
 require 'osmn/version'
 
 module OSMN
@@ -21,5 +22,9 @@ module OSMN
   
   def lookup(*osm_ids, **params)
     Lookup.new(**params.merge(osm_ids: osm_ids.join(','))).call
+  end
+  
+  def status
+    Status.new.call
   end
 end

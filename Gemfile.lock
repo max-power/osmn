@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    osmn (0.2.5)
+    osmn (0.2.7)
       ostruct
 
 GEM
