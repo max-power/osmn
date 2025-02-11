@@ -6,7 +6,7 @@ A Ruby wrapper for the OpenStreetMap Nominatim API.
 and to generate synthetic addresses of osm points (reverse geocoding). 
 
 Service can be found at http://nominatim.openstreetmap.org  
-API Details can be found at http://wiki.openstreetmap.org/wiki/Nominatim
+API Details can be found at https://nominatim.org/release-docs/develop/api/Overview/
 
 ## Installation
 
