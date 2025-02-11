@@ -10,8 +10,9 @@ require 'osmn/version'
 module OSMN
   module_function
 
-  def search(query, **params)
-    Search.new(**params.merge(q: query)).call
+  def search(query = nil, **params)
+    params.merge!(q: query) if query && !query.empty?
+    Search.new(**params).call
   end
 
   def reverse_geocode(lat, lon, **params)
