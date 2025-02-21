@@ -11,19 +11,23 @@ module OSMN
   module_function
 
   def search(query = nil, **params)
-    params.merge!(q: query) if query && !query.empty?
-    Search.new(**params).call
+    params.merge!(q: query) unless query.to_s.empty?
+    request '/search', **params
   end
 
   def reverse_geocode(lat, lon, **params)
-    Search.new('/reverse', **params.merge(lat: lat, lon: lon)).call
+    request '/reverse', **params.merge(lat: lat, lon: lon)
   end
   
   def lookup(*osm_ids, **params)
-    Search.new('/lookup', **params.merge(osm_ids: osm_ids.join(','))).call
+    request '/lookup', **params.merge(osm_ids: osm_ids.join(','))
   end
   
   def status
-    Search.new('/status').call
+    request '/status'
+  end
+  
+  def request(path, **params)
+    Search.new(path, **params).call
   end
 end

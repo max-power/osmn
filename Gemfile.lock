@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    osmn (0.2.8)
+    osmn (0.3.0)
       ostruct
 
 GEM
@@ -21,4 +21,4 @@ DEPENDENCIES
   rake
 
 BUNDLED WITH
-   2.6.3
+   2.6.2
