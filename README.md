@@ -29,7 +29,7 @@ OSMN.status
 ```
 
 ### Search with parameters:
-You can set any parameter defined in the Nominatim documentation page (hhttps://nominatim.org/release-docs/develop/api/Search/)
+You can set any parameter defined in the Nominatim documentation page (https://nominatim.org/release-docs/develop/api/Search/)
 
 ```ruby
 OSMN.search('10117 Berlin', format: geojson, polygon: true)
