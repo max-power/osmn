@@ -3,12 +3,11 @@ require 'net/http'
 require 'ostruct'
 require 'osmn/request'
 require 'osmn/search'
-require 'osmn/reverse'
-require 'osmn/lookup'
-require 'osmn/status'
 require 'osmn/version'
 
 module OSMN
+  HOST = 'nominatim.openstreetmap.org'.freeze
+  
   module_function
 
   def search(query = nil, **params)
@@ -17,14 +16,14 @@ module OSMN
   end
 
   def reverse_geocode(lat, lon, **params)
-    Reverse.new(**params.merge(lat: lat, lon: lon)).call
+    Search.new('/reverse', **params.merge(lat: lat, lon: lon)).call
   end
   
   def lookup(*osm_ids, **params)
-    Lookup.new(**params.merge(osm_ids: osm_ids.join(','))).call
+    Search.new('/lookup', **params.merge(osm_ids: osm_ids.join(','))).call
   end
   
   def status
-    Status.new.call
+    Search.new('/status').call
   end
 end

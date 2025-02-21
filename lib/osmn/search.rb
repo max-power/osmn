@@ -2,7 +2,8 @@ module OSMN
   class Search
     attr_accessor :params
 
-    def initialize(**params)
+    def initialize(path='/search', **params)
+      @path   = path
       @params = default_params.merge(params)
     end
 
@@ -16,12 +17,8 @@ module OSMN
       { format: :json }
     end
 
-    def path
-      '/search'
-    end
-
     def response
-      Request.new(path, **params).fetch
+      Request.new(HOST, @path, **params).fetch
     end
 
     def parse(response)
