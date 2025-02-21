@@ -20,51 +20,21 @@ OSMN.search('135 pilkington avenue, birmingham')
 
 # convert latitude and longitude into a place
 OSMN.reverse_geocode(52.5487429714954, -1.81602098644987)
-```
-### The full control way:
-#### Search
-```ruby
-# search for address
-# required params: q (the query)
-search = OSMN::Search.new(q: '135 pilkington avenue, birmingham')
-search.params.merge!(limit: 1)
 
-# you can revise the params used
-search.params
-# >> {:q => '135 pilkington avenue, birmingham', :limit => 1}
+# lookup osm id
+OSMN.lookup(38862847, 38862848, 38862849)
 
-# and if all is ok, you can execute the query
-search.call
+# OSMN status
+OSMN.status
 ```
-You can set any parameter defined in the Nominatim wiki page (http://wiki.openstreetmap.org/wiki/Nominatim#Parameters)
-```ruby
-# example parameters
-params = {
-    q: '135 pilkington avenue, birmingham', 
-    'accept-language': 'en', 
-    countrycodes: 'gb', 
-    bounded: 1, 
-    polygon: 1, 
-    addressdetails: 1
-}
-```
-#### Reverse Geocode
-```ruby
-# convert lat and long
-# required params: lat, lon (latitude and longitude)
-search = OSMN::Reverse.new(lat: 52.5487429714954)
-search.params.merge!(lon: -1.81602098644987)
 
-# check the params
-search.params
-# >> {:lat => 52.5487429714954, :lon => -1.81602098644987}
+### Search with parameters:
+You can set any parameter defined in the Nominatim documentation page (hhttps://nominatim.org/release-docs/develop/api/Search/)
 
-# run the query
-search.call
-```
-You can set any parameter defined in the Nominatim wiki page (http://wiki.openstreetmap.org/wiki/Nominatim#Parameters_2)
 ```ruby
-# example parameters
+OSMN.search('10117 Berlin', format: geojson, polygon: true)
+OSMN.reverse_geocode(52.5487429714954, -1.81602098644987, addressdetails: true)
+
 params = {
     lat: 52.5487429714954, 
     lon: -1.81602098644987, 
@@ -73,9 +43,11 @@ params = {
     zoom: 18, 
     addressdetails: 1
 }
+OSMN.search(params)
 ```
 
-Check the complete list of parameters for each query on the Nominatim Wiki page (http://wiki.openstreetmap.org/wiki/Nominatim)
+
+Check the complete list of parameters for each query on the Nominatim documentation page (https://nominatim.org/release-docs/develop/api/Search/)
 
 ## License
 Copyright (c) 2012, Jorge Kalmbach <kalmbach.at.gmail.com>
