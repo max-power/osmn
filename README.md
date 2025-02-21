@@ -22,7 +22,9 @@ OSMN.search('135 pilkington avenue, birmingham')
 OSMN.reverse_geocode(52.5487429714954, -1.81602098644987)
 
 # lookup osm id
-OSMN.lookup(38862847, 38862848, 38862849)
+lookup = OSMN.lookup("R146656","W50637691","N240109189")
+lookup.map(&:name) # => ["Manchester", "Brandenburger Tor", "Berlin"]
+
 
 # OSMN status
 OSMN.status
