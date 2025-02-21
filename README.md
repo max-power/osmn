@@ -32,7 +32,8 @@ OSMN.status
 You can set any parameter defined in the Nominatim documentation page (https://nominatim.org/release-docs/develop/api/Search/)
 
 ```ruby
-OSMN.search('10117 Berlin', format: geojson, polygon: true)
+OSMN.search('10117 Berlin', country: "DE", format: :geojson, polygon_geojson: true)
+OSMN.search('Paris', featureType: 'city')
 OSMN.reverse_geocode(52.5487429714954, -1.81602098644987, addressdetails: true)
 
 params = {
